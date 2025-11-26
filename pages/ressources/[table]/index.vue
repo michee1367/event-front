@@ -47,12 +47,16 @@ onMounted(async () => {
     <div class="page-wrapper" v-if="resource">
           <!-- Page header -->
           <TopNavbar />
+
           <div class="page-header d-print-none">
             <div class="container-xl">
               <div class="row g-2 align-items-center">
                 <div class="col">
                   
-                    <h1 class="text-2xl font-bold mb-4 capitalize">Liste des {{getNormalNameTableLocal(resource)}}s</h1>
+                    <h1 class="text-2xl font-bold mb-4 capitalize">
+          
+          Liste des {{getNormalNameTableLocal(resource)}}s <span><NuxtLink :to="`/ressources`" class="btn btn-link px-5">[Fonctionnalités]</NuxtLink></span>
+                    </h1>
                     <NuxtLink :to="`/ressources/${table}/add`" class="btn btn-sm btn-primary px-5">Ajouter</NuxtLink>
                 </div>
               </div>
