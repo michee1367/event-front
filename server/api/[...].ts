@@ -29,18 +29,21 @@ async function meProxy(event: H3Event<EventHandlerRequest>) {
   
   //console.log(user)
 
-  if (!user) {
+  /*if (!user) {
       throw createError({
           "statusCode": 401,
           "statusMessage": "unauthorization",
           "data" : {}
       })
-  }
+  }*/
   
   let headers = {
-      ["Authorization"]: "Bearer " + user.jwt_token,
+      //["Authorization"]: "Bearer " + user.jwt_token,
       ["Accept"]: "application/json",
       //["Content-Type"]: getContenteType(event),
+  }
+  if (user) {
+    headers["Authorization"] = "Bearer " + user.jwt_token
   }
   let resAxios = null
 
