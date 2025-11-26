@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="container pb-5">
+      <div class="container pb-5" v-if="false">
 
         <h3>Statistiques</h3>
         <div class="row">
